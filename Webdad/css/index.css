@@ -1,0 +1,437 @@
+/* --- 1. ตั้งค่าพื้นหลังและโทนสีดำ --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    background-color: #000000; /* ดำเกือบสนิท */
+    color: #e0e0e0; /* ขาวนวลเพื่อให้ไม่ล้าสายตา */
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+}
+
+.main-header {
+    height: 300px;
+    background-color: #0c0c0c; /* ดำหอศิลป์ */
+    padding: 60px 0;
+    margin: 10px;
+    border-radius: 0 0 50px 50px; /* ขอบล่างโค้งมน */
+    border-bottom: 1px solid #1a1a1a;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    position: relative;
+}
+
+.header-content {
+    width: 90%;
+    height: 200px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* แยกซ้าย-ขวา */
+    gap: 40px;
+}
+
+/* --- ฝั่งซ้าย: ข้อความ --- */
+.father-info {
+    flex: 1;
+}
+
+.father-name {
+    font-family: 'Playfair Display', serif; /* หรือ Font ที่ดูหรูหรา */
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.father-bio {
+    color: #888;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.header-tags {
+    display: flex;
+    gap: 10px;
+}
+
+.header-tags span {
+    background: #1a1a1a;
+    color: #e67e22; /* สีส้มทองให้ดูเด่น */
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid #333;
+}
+
+/* --- ฝั่งขวา: กล่องรูปภาพ --- */
+.father-profile {
+    margin: 5px;
+    padding: 20px;
+    flex: 0 0 300px; /* ล็อคขนาดรูปภาพ */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile-frame {
+    width: auto;
+    height: auto;
+    background: #151515;
+    border-radius: 30px; /* มุมโค้งมนตามที่คุณชอบ */
+    overflow: hidden;
+    border: 2px solid #222;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    transition: transform 0.4s ease;
+}
+
+.profile-frame:hover {
+    transform: scale(1.03);
+    border-color: #444;
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* บังคับให้รูปเต็มกรอบ */
+    filter: grayscale(30%); /* ปรับให้สีดรอปลงนิดๆ เพื่อความคลาสสิก */
+    transition: filter 0.4s ease;
+}
+
+.profile-frame:hover img {
+    filter: grayscale(0%);
+}
+
+/* --- ปรับแต่งสำหรับมือถือ --- */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column-reverse; /* เอารูปขึ้นก่อนในมือถือ */
+        text-align: center;
+    }
+    
+    .father-profile {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    
+    .header-tags {
+        justify-content: center;
+    }
+    
+    .father-name {
+        font-size: 2.5rem;
+    }
+}
+
+nav{
+    background-image: url(https://images.unsplash.com/photo-1702731798357-22bd8ca4a484?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2luZG93cyUyMDExJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww);
+    margin: 10px;
+    position: relative;
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    border-bottom: 1px solid #1a1a1a;
+
+}
+
+
+
+
+nav ul{
+    margin: 0px;
+    display: flex;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+nav ul li{
+    list-style: none;
+
+}
+
+nav ul li a{
+    list-style: none;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 40px;
+    padding: 10px 40px;
+    height: 60px;
+    margin: 10px 10px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    display: block;
+    
+}
+
+nav ul li a:hover{
+    margin: 0 30px;
+    padding: 10px 40px;
+    width: 0 auto;
+    background-color: #ffffff;
+    color: #FF0044;
+    border-radius: 5px;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    transition: all 1s;
+}
+
+    
+
+    /* underline animation */
+    nav ul li::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #ffffff;
+      left: 0;
+      bottom: -5px;
+      transition: 1.5s;
+    }
+
+    nav ul li:hover::after {
+      width: 100%;
+    }
+
+
+
+
+/* --- ส่วนการ์ดผลงาน (Gallery Item) --- */
+
+.section-title {
+    text-shadow: rgb(58, 58, 58) 1px 2px 2px;
+    text-align: center;     
+    font-size: 2.5rem;       
+    color: #ffffff;          
+    margin-top: 60px;       
+    margin-bottom: 40px;    
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;     
+    position: relative;      
+}
+
+/* เพิ่มลูกเล่นเส้นใต้หัวข้อแบบเท่ๆ */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;             /* ความยาวของเส้น */
+    height: 3px;             /* ความหนาของเส้น */
+    background: #ffffff;     /* สีทอง/ส้ม เพื่อให้เข้ากับ Header */
+    margin: 15px auto 0;     /* จัดเส้นให้อยู่กึ่งกลางใต้ตัวหนังสือ */
+    border-radius: 2px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+    margin: 40px;
+}
+
+.gallery-item {
+    position: relative;
+    background: #151515;
+    /* --- อัปเกรด: เพิ่มความโค้งมนที่มุมกล่อง --- */
+    border-radius: 5px; 
+    overflow: hidden; /* บังคับให้รูปภาพโค้งตามกล่องด้วย */
+    
+    display: flex;
+    flex-direction: column; /* ล็อคให้ตัวหนังสืออยู่ใต้ภาพเสมอ ไม่กระเด็นออกข้าง */
+    border: 1px solid #222;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    border-color: #ffffff; /* เปลี่ยนสีขอบตอนเม้าส์ชี้ให้ดูเด่น */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    /* ทำให้มุมบนของรูปโค้งตามกล่อง */
+    transition: transform 1s ease;
+}
+
+/* --- ส่วนกล่องข้อความใต้ภาพ (แก้บัคตัวหนังสือกระเด็น) --- */
+.item-overlay {
+    background: #151515;
+    padding: 20px;
+    width: 100%; /* บังคับความกว้างให้เต็มกล่อง */
+    text-align: center; /* จัดตัวหนังสือให้อยู่กึ่งกลางสวยๆ */
+    border-top: 1px solid #222;
+}
+
+.item-overlay h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 5px;
+    font-family: 'Prompt', sans-serif;
+}
+
+.item-overlay p {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* --- ส่วนหน้าต่างภาพขยาย (Lightbox) ให้โค้งด้วย --- */
+.lightbox-img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 15px; /* ทำให้ภาพตอนซูมโค้งมนด้วย */
+    border: 2px solid #333;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+
+/* --- 4. Lightbox (หน้าต่างภาพขยาย) --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.98);
+    opacity: 0; /* เริ่มต้นที่โปร่งใสเพื่อทำ Fade-in */
+    transition: opacity 0.4s ease; 
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.lightbox.active {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-img {
+    max-width: 85%;
+    max-height: 80vh;
+    box-shadow: 0 0 50px rgba(0,0,0,1);
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.lightbox.active .lightbox-img {
+    transform: scale(1);
+}
+
+/* --- สไตล์ส่วนท้าย (Footer) --- */
+.main-footer {
+    background-color: #050505; /* ดำสนิทกว่าพื้นหลังหลักเล็กน้อย */
+    color: #e0e0e0;
+    padding: 60px 0 20px 0;
+    margin-top: 80px;
+    border-top: 1px solid #1a1a1a;
+    /* เพิ่มความโค้งมนที่มุมบนขวาและซ้ายให้ดูซอฟต์ */
+    border-radius: 40px 40px 0 0; 
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+    gap: 40px;
+}
+
+.footer-brand, .footer-links, .footer-contact {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-brand h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    line-height: 1.6;
+    color: #888;
+}
+
+.footer-links h4, .footer-contact h4 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #fff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    color: #888;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #151515;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* ปรับให้ดูดีในมือถือ */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+/* --- 5. มือถือ --- */
+@media (max-width: 600px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+    .hero { height: 50vh; }
+}
