@@ -418,20 +418,19 @@ nav ul li a:hover{
     color: #555;
 }
 
-/* ปรับให้ดูดีในมือถือ */
+/* สำหรับหน้าจอมือถือที่มีความกว้างไม่เกิน 768px */
 @media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
+    /* ปรับให้รูปภาพผลงานขยายเต็มความกว้างจอ และไม่โย้เย้ */
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 20px; /* เว้นระยะห่างระหว่างรูป */
     }
-    
-    .social-icons {
-        justify-content: center;
-    }
-}
 
-/* --- 5. มือถือ --- */
-@media (max-width: 600px) {
-    .gallery-grid { grid-template-columns: 1fr; }
-    .hero { height: 50vh; }
+    /* ถ้าคุณใช้ระบบ Grid หรือ Flex ในการเรียงรูป ให้เปลี่ยนมาเป็นแถวเดียวลงมา */
+    .gallery-container, .grid { 
+        display: block;
+        padding: 10px;
+    }
 }
