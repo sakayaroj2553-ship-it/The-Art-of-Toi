@@ -110,26 +110,6 @@ h1, h2, h3 {
     filter: grayscale(0%);
 }
 
-/* --- ปรับแต่งสำหรับมือถือ --- */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column-reverse; /* เอารูปขึ้นก่อนในมือถือ */
-        text-align: center;
-    }
-    
-    .father-profile {
-        justify-content: center;
-        margin-bottom: 30px;
-    }
-    
-    .header-tags {
-        justify-content: center;
-    }
-    
-    .father-name {
-        font-size: 2.5rem;
-    }
-}
 
 nav{
     background-image: url(https://images.unsplash.com/photo-1702731798357-22bd8ca4a484?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2luZG93cyUyMDExJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww);
@@ -418,19 +398,52 @@ nav ul li a:hover{
     color: #555;
 }
 
-/* สำหรับหน้าจอมือถือที่มีความกว้างไม่เกิน 768px */
-@media (max-width: 768px) {
-    /* ปรับให้รูปภาพผลงานขยายเต็มความกว้างจอ และไม่โย้เย้ */
-    img {
-        width: 100%;
-        height: auto;
-        display: block;
-        margin-bottom: 20px; /* เว้นระยะห่างระหว่างรูป */
+/* ส่วนนี้คือสำหรับหน้าจอเล็ก (มือถือ) เช่น S23 Ultra (384px) */
+@media (max-width: 480px) {
+    /* 1. จัดระเบียบ Header ให้เรียงต่อกันเป็นแนวตั้ง (Vertical) */
+    header.main-header {
+        height: auto; /* ให้ความสูงขยายตามเนื้อหา */
+        padding: 30px 15px; /* เพิ่มช่องว่างบนล่างให้ดูไม่เบียด */
+        display: flex;
+        flex-direction: column; /* สั่งให้เนื้อหาทั้งหมด (ชื่อเว็บ, คำบรรยาย, รูป) เรียงต่อกันลงมา */
+        align-items: center; /* จัดให้เนื้อหาอยู่กึ่งกลาง */
+        text-align: center;
     }
 
-    /* ถ้าคุณใช้ระบบ Grid หรือ Flex ในการเรียงรูป ให้เปลี่ยนมาเป็นแถวเดียวลงมา */
-    .gallery-container, .grid { 
-        display: block;
+    /* 2. ปรับขนาดตัวหนังสือชื่อเว็บให้เล็กลงหน่อยในมือถือ */
+    .father-name {
+        font-size: 2rem; /* หรือปรับตามความเหมาะสม */
+        margin-bottom: 10px;
+    }
+
+    /* 3. จัดการแถบเมนู (Nav) ไม่ให้ไปบังใคร */
+    nav {
+        margin-top: 20px;
+        position: relative; /* ให้กลับมาอยู่ในการจัดเรียงปกติ */
+        width: 100%; /* ให้เต็มความกว้าง */
+        display: flex;
+        justify-content: center; /* จัดให้ปุ่มอยู่กึ่งกลาง */
+        flex-wrap: wrap; /* ถ้าปุ่มเยอะ ให้ลงมาบรรทัดใหม่ได้ */
+        gap: 10px; /* เว้นระยะระหว่างปุ่ม */
+    }
+
+    /* 4. จัดการปุ่มเมนูให้ดูดีและกดง่ายในมือถือ */
+    nav a.main-nav {
+        font-size: 0.9rem; /* ลดขนาดตัวหนังสือนิดหน่อย */
+        padding: 8px 15px; /* เพิ่มพื้นที่ให้กดง่ายขึ้น */
+    }
+
+    /* 5. จัดการรูปภาพใน Featured Works ให้เต็มจอสวยงาม */
+    .gallery-container { 
+        display: flex;
+        flex-direction: column; /* เรียงเป็นแถวเดียวลงมา */
         padding: 10px;
+    }
+
+    .gallery-container img {
+        width: 100%; /* ให้รูปขยายเต็มความกว้างจอ */
+        height: auto; /* รักษาอัตราส่วนรูปภาพไม่ให้โย้เย้ */
+        margin-bottom: 15px; /* เว้นระยะระหว่างรูป */
+        border-radius: 8px; /* เพิ่มขอบมนนิดหน่อย */
     }
 }
