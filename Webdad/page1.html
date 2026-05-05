@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | The Art of Toi</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Prompt:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/page1.css">
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="gallery-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-label">The Art of Toi</span>
+      <h1>คลังภาพผลงาน</h1>
+      <p>รวบรวมผลงานภาพวาด ความทรงจำ และช่วงเวลาที่ถูกถ่ายทอดผ่านปลายพู่กัน</p>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="gallery-nav">
+    <a href="index.html">Home</a>
+    <a href="gallery.html" class="active">Gallery</a>
+    <a href="Contact.htm">Contact</a>
+  </nav>
+
+  <!-- FEATURED -->
+  <section class="featured-section">
+    <div class="section-header">
+      <h2>ผลงานเด่น</h2>
+      <p>Selected Signature Works</p>
+    </div>
+
+    <div class="featured-grid">
+
+      <div class="featured-card large" data-title="สายหมอกแห่งความทรงจำ">
+        <img src="img/featured1.jpg" alt="Featured Work 1">
+        <div class="featured-overlay">
+          <h3>สายหมอกแห่งความทรงจำ</h3>
+          <span>Watercolor Collection</span>
+        </div>
+      </div>
+
+      <div class="featured-card large" data-title="แสงสุดท้ายริมขอบฟ้า">
+        <img src="img/featured2.jpg" alt="Featured Work 2">
+        <div class="featured-overlay">
+          <h3>แสงสุดท้ายริมขอบฟ้า</h3>
+          <span>Oil Painting</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ALL GALLERY -->
+  <main class="gallery-page">
+
+    <div class="section-header">
+      <h2>ผลงานทั้งหมด</h2>
+      <p>Gallery Archive</p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-card" data-title="ภาพที่ 1">
+        <img src="img/1.jpg" alt="">
+      </div>
+
+      <div class="gallery-card" data-title="ภาพที่ 2">
+        <img src="img/2.jpg" alt="">
+      </div>
+
+      <div class="gallery-card" data-title="ภาพที่ 3">
+        <img src="img/3.jpg" alt="">
+      </div>
+
+      <div class="gallery-card" data-title="ภาพที่ 4">
+        <img src="img/4.jpg" alt="">
+      </div>
+
+      <div class="gallery-card" data-title="ภาพที่ 5">
+        <img src="img/5.jpg" alt="">
+      </div>
+
+      <div class="gallery-card" data-title="ภาพที่ 6">
+        <img src="img/6.jpg" alt="">
+      </div>
+
+      <div class="gallery-card" data-title="ภาพที่ 7">
+        <img src="img/7.jpg" alt="">
+      </div>
+
+      <div class="gallery-card" data-title="ภาพที่ 8">
+        <img src="img/8.jpg" alt="">
+      </div>
+
+    </div>
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <span class="close-btn">&times;</span>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
+  <script src="JS/page.js"></script>
+</body>
+</html>
